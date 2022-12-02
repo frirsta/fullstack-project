@@ -18,9 +18,9 @@ class PostView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        primaryKey = self.kwargs['primaryKey']
+        pk = self.kwargs['pk']
         slug = self.kwargs['slug']
 
-        post = get_object_or_404(Post, primaryKey=primaryKey, slug=slug)
+        post = get_object_or_404(Post, pk=pk, slug=slug)
         context['post'] = post
         return context
