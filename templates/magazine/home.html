@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid hero">
+  <h1>MAGAZINE</h1>
+</div>
+<hr>
+<div class="container">
+    {% for post in post_list %}
+    <div class="post-container">
+    <div class="blog-image"></div>
+    <div class="card-body">
+      <h2 class="card-title">{{ post.title }}</h2>
+      <p class="card-text"><small class="text-muted">{{ post.author }} | {{ post.created_on }}</small></p>
+      <p>{{ post.content }}</p>
+      <a href="#">LEARN MORE</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}

@@ -1,3 +1,26 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from django.shortcuts import get_object_or_404
 
-# Create your views here.
+from .models import Post
+
+
+class HomeView(ListView):
+    template_name = 'magazine/home.html'
+    queryset = Post.objects.all()
+    paginate_by = 2
+
+
+class PostView(DetailView):
+    model = Post
+    template_name = 'magazine/post.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        primaryKey = self.kwargs['primaryKey']
+        slug = self.kwargs['slug']
+
+        post = get_object_or_404(Post, primaryKey=primaryKey, slug=slug)
+        context['post'] = post
+        return context

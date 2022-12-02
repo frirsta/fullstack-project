@@ -1,6 +1,15 @@
+# Dependencies #
+Python 3.8
+Django 3.1
+PostgreSQL 12.4
+Ubuntu 20.04
+
 ## Libraries 
 * pip3 install 'django<4'
 * pip3 install psycopg2
+* pip3 install Pillow
+* pip3 install 'django<4' gunicorn
+* pip3 install dj_database_url==0.5.0 psycopg2
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
