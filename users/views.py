@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
 from django.urls import reverse
-
+from .models import User, Profile
 from .forms import SignUpForm, LoginForm
 from django.contrib import messages
 
@@ -47,3 +48,10 @@ def loginUser(request):
 def logoutUser(request):
     logout(request)
     return redirect(reverse("users:login"))
+
+
+@login_required
+def profile(request, username):
+    user = get_object_or_404(User, username=username)
+    profile = get_object_or_404(Profile, user=user)
+    return render(request, 'users/profile.html', {'profile': profile, 'user': user})
