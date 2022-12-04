@@ -7,4 +7,5 @@ urlpatterns = [
     path('login/', loginUser, name='login'),
     path('logout/', logoutUser, name='logout'),
     path('profile/<username>/', profile, name='profile'),
+    path('about_user/', about_user, name='about_user'),
 ]

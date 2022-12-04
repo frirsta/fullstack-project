@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
 from django.urls import reverse
 from .models import User, Profile
-from .forms import SignUpForm, LoginForm
+from .forms import SignUpForm, LoginForm, AboutMeForm
 from django.contrib import messages
 
 
@@ -55,3 +55,26 @@ def profile(request, username):
     user = get_object_or_404(User, username=username)
     profile = get_object_or_404(Profile, user=user)
     return render(request, 'users/profile.html', {'profile': profile, 'user': user})
+
+
+@login_required
+def edit_user_profile(request):
+    if request.method == 'POST':
+        form = AboutMeForm(request.POST, request.FILES)
+        if form.is_valid():
+            about_me = form.cleaned_data["about_me"]
+            username = form.cleaned_data["username"]
+            image = form.cleaned_data["image"]
+
+            user = User.objects.get(id=request.user.id)
+            profile = Profile.objects.get(user=user)
+            user.username = username
+            user.save()
+            profile.about_me = about_me
+            if image:
+                profile.image = image
+            profile.save()
+            return redirect("users:profile", username=user.username)
+        else:
+            form = AboutMeForm()
+        return render(request, "users/about_user.html", {"form": form})

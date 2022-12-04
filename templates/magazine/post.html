@@ -6,7 +6,11 @@
     <div class="card-body">
       <h2 class="card-title">{% block title %} {{ post.title }} {% endblock title %}</h2>
       <p class="card-text">{{ post.content | safe }}</p>
-      <p class="card-text"><small class="text-muted">{{ post.author }} | {{ post.created_on }}</small></p>
+
+      <button type="button" class="btn btn-primary position-relative {% url 'users:profile' post.author.username %}">
+       <small>{{ post.author }} | {{ post.created_on }}</small>
+      </button>
+
     </div>
 
   </div>
