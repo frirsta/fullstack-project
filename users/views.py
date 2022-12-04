@@ -75,6 +75,6 @@ def edit_user_profile(request):
                 profile.image = image
             profile.save()
             return redirect("users:profile", username=user.username)
-        else:
-            form = AboutMeForm()
-        return render(request, "users/about_user.html", {"form": form})
+    else:
+        form = AboutMeForm()
+    return render(request, "users/about_user.html", {"form": form})

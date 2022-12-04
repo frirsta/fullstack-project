@@ -12,5 +12,6 @@
       <h3 class="card-text">{{ user.username }}</h3>
       <p class="card-text">{{ user.profile.about_me }}</p>
     </div>
+    <p><a href="{% url 'users:about_user' %}">Edit</a></p>
   </div>
 {% endblock content %}

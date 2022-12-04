@@ -17,5 +17,5 @@ class LoginForm(forms.Form):
 
 class AboutMeForm(forms.Form):
     username = forms.CharField()
-    about_me = forms.CharField(widget=forms.TextArea())
-    image = forms.ImageFields(required=False)
+    about_me = forms.CharField(widget=forms.Textarea())
+    image = forms.ImageField(required=False)
