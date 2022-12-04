@@ -11,6 +11,11 @@ Ubuntu 20.04
 * pip3 install 'django<4' gunicorn
 * pip3 install dj_database_url==0.5.0 psycopg2
 
+### database
+* CREATE DATABASE blog;
+* CREATE USER test WITH ENCRYPTED PASSWORD '1234';
+* GRANT ALL PRIVILEGES ON DATABASE blog TO test;
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome frirsta,
