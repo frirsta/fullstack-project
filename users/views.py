@@ -60,7 +60,7 @@ def profile(request, username):
 @login_required
 def edit_user_profile(request):
     if request.method == 'POST':
-        form = AboutMeForm(request.POST, request.FILES)
+        form = AboutMeForm(request.user.username, request.POST, request.FILES)
         if form.is_valid():
             about_me = form.cleaned_data["about_me"]
             username = form.cleaned_data["username"]
@@ -76,5 +76,5 @@ def edit_user_profile(request):
             profile.save()
             return redirect("users:profile", username=user.username)
     else:
-        form = AboutMeForm()
+        form = AboutMeForm(request.user.username)
     return render(request, "users/about_user.html", {"form": form})

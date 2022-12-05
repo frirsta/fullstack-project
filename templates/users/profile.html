@@ -13,5 +13,6 @@
       <p class="card-text">{{ user.profile.about_me }}</p>
     </div>
     <p><a href="{% url 'users:about_user' %}">Edit</a></p>
+    <p><a href="{% url 'users:password_change' %}">Change Password</a></p>
   </div>
 {% endblock content %}

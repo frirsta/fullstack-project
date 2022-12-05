@@ -19,3 +19,19 @@ class AboutMeForm(forms.Form):
     username = forms.CharField()
     about_me = forms.CharField(widget=forms.Textarea())
     image = forms.ImageField(required=False)
+
+    def __init__(self, og_username, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.og_username = og_username
+
+    def clean_username(self):
+        """
+        Throws exception if username is taken.
+        """
+
+        username = self.cleaned_data['username']
+        if username != self.og_username:
+            if User.objects.filter(username=username).exists():
+                raise forms.ValidationError(
+                    'Username already exists.')
+        return username
