@@ -61,3 +61,18 @@ class PostUpdateView(LoginRequiredMixin, CreateVies):
         messages.success(
             self.request, 'Your post has been updated successfully')
         return reverse_lazy('magazine:home')
+
+    def get_queryset(self):
+        return self.model.objects.filter(author=self.request.user)
+
+
+class PostDeleteView(LoginRequiredMixin, DeleteView):
+    model = Post
+
+    def get_success_url(self):
+        messages.success(
+            self.request, 'Your post has been deleted successfully')
+        return reverse_lazy('magazine:home')
+
+    def get_queryset(self):
+        return self.model.objects.filter(author=self.request.user)
