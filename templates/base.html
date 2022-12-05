@@ -30,6 +30,10 @@
             <a class="nav-link {% if request.user.username in request.path %}active{% endif %}" href="{% url 'users:profile' request.user.username %}">Profile</a>
           </li>
           <li class="nav-item">
+            <a href="{% url 'magazine:post_create' %}"
+              class="nav-link {% if request.path == '/post/create/' %}active{% endif %}">Create Post</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'users:logout' %}">Logout</a>
           </li>
           {% else %}
@@ -43,7 +47,7 @@
           </li>
           <li class="nav-item">
             <a href="{% url 'magazine:post_create' %}"
-              class="nav-link {% if request.path == '/post/create/' %}active{% endif %}">Create Post</a>
+              class="nav-link {% if request.path == '/post/create/' %}active{% endif %}">Create</a>
           </li>
         </ul>
         {% endif %}
