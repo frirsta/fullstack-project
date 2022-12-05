@@ -29,7 +29,7 @@ class PostView(DetailView):
         return context
 
 
-class PostCreateView(LoginRequiredMixin, CreateVies):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content', 'image']
 
@@ -46,7 +46,7 @@ class PostCreateView(LoginRequiredMixin, CreateVies):
         return super().form_valid(form)
 
 
-class PostUpdateView(LoginRequiredMixin, CreateVies):
+class PostUpdateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content', 'image']
 

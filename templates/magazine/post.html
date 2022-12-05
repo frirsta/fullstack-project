@@ -2,6 +2,15 @@
 
 {% block content %}
 <div class="container post-container">
+  {% if post.image %}
+  <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-img-top">
+  {% endif %}
+  {% if post.author == request.user %}
+  <div class="container">
+    <a class="btn btn-primary" href="{% url 'magazine:post_update' post.id %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'magazine:post_delete' post.id %}">Delete</a>
+  </div>
+  {% endif %}
     <div class="blog-image"></div>
     <div class="card-body">
       <h2 class="card-title">{% block title %} {{ post.title }} {% endblock title %}</h2>
