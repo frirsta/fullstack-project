@@ -5,8 +5,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .models import Post, Comment
-from .forms import CommentForm
+from .models import Post
 
 
 class HomeView(ListView):
@@ -18,33 +17,6 @@ class HomeView(ListView):
 class PostView(DetailView):
     model = Post
     template_name = 'magazine/post.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        pk = self.kwargs['pk']
-        slug = self.kwargs['slug']
-
-        post = get_object_or_404(Post, pk=pk, slug=slug)
-        form = CommentForm()
-        comments = post.comment_set.all()
-
-        context['post'] = post
-        context['comments'] = comments
-        context['form'] = form
-        return context
-
-    def post(self, request, *args, **kwargs):
-        form = CommentForm(request.POST)
-        self.objects = self.get_object()
-        context = super().get_context_data(**kwargs)
-
-        post = Post.objects.filter(id=self.kwargs['pk'])[0]
-        comments = post.comment_set.all()
-
-        context['post'] = post
-        context['comments'] = comments
-        context['form'] = form
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
