@@ -8,7 +8,7 @@
         <div class="form-group">
             {{ form.username.label_tag }}
             <input type="text" class="form-control {% if form.username.errors %}is-invalid{% endif %}" id="id_username"
-                name="username" value="{{ form.username.value|default:user.username }}" disabled>
+                name="username" value="{{ form.username.value|default:user.username }}">
             {% if form.username.errors %}
             <div class="invalid-feedback">
                 {{ form.username.errors }}
