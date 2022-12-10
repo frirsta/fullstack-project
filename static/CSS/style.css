@@ -9,6 +9,12 @@ body {
     background: linear-gradient(to bottom, #FFF0F5 0%, #FFFFFF 50%, #FFF0F5 100%);
 }
 
+.container-sm{
+    border: 3px solid;
+    height: fit-content;
+    width: 70%;
+}
+
 .card {
     background-color: unset;
     align-items: center;

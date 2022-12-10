@@ -2,25 +2,26 @@
 {% load static %}
 {% block content %}
 <div class="container">
+  <div class="container-sm">
   {% if post.image %}
   <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-img-top">
-  {% endif %}
-  {% if post.author == request.user %}
-  <div class="container">
-    <a class="btn btn-primary" href="{% url 'magazine:post_update' post.id %}">Edit</a>
-    <a class="btn btn-danger" href="{% url 'magazine:post_delete' post.id %}">Delete</a>
-  </div>
   {% endif %}
     <div class="blog-image"></div>
     <div class="card-body">
       <h2 class="card-title">{% block title %} {{ post.title }} {% endblock title %}</h2>
       <p class="card-text">{{ post.content | safe }}</p>
 
-      <button type="button" class="btn btn-primary position-relative {% url 'users:profile' post.author.username %}">
-       <small>{{ post.author }} | {{ post.created_on }}</small>
-      </button>
 
     </div>
+    {% if post.author == request.user %}
+    <div class="container">
+      <a class="btn btn-primary" href="{% url 'magazine:post_update' post.id %}">Edit</a>
+      <a class="btn btn-danger" href="{% url 'magazine:post_delete' post.id %}">Delete</a>
+    </div>
+    {% endif %}
+    <span class="blog-author-date {% url 'users:profile' post.author.username %}">
+      {{ post.author }} | {{ post.created_on }}
+     </span>
     {% if comments %}
     <div class="row mt-5">
       <div class="col-lg-6 offset-lg-3">
@@ -45,7 +46,8 @@
       {% endfor %}
     </div>
     {% endif %}
-  
+  </div>
+
     <div class="row mt-5">
       <div class="col-lg-6 offset-lg-3">
         <h3>Leave a comment</h3>
