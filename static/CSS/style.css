@@ -49,21 +49,19 @@ ul {
     margin: 50px;
 }
 
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .form-group {
     margin: 20px auto;
 }
 
 label {
     font-size: 20px;
-}
-
-/* login form */
-
-.login-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Hero */
@@ -170,6 +168,7 @@ textarea {
     align-items: center;
     font-size: 50px;
 }
+
 .footer-links li {
     margin: 30px 50px;
 }

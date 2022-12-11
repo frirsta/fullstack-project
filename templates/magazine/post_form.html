@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
+<div class="container form-container">
     <h3>{% if update %}Update Post{% else %}Create Post{% endif %}</h3>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         <div class="form-group">
             {{ form.title.label_tag }}
-            <input type="text" class="form-control {% if form.title.errors %}is-invalid{% endif %}"
+            <input type="text" class="form-control input-area {% if form.title.errors %}is-invalid{% endif %}"
                 id="id_title" name="title" value='{{ form.title.value|default:"" }}'>
 
             {% if form.title.errors %}
@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             {{ form.content.label_tag }}
-            <textarea type="text" class="form-control {% if form.content.errors %}is-invalid{% endif %}"
+            <textarea type="text" class="form-control input-area {% if form.content.errors %}is-invalid{% endif %}"
                 id="id_content" name="content"
                 rows="10" cols="40">{{ form.content.value|default:"" }}</textarea>
             {% if form.content.errors %}
