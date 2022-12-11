@@ -17,12 +17,15 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    font-size: 40px;
+}
+
 .bg-light {
     --bs-bg-opacity: unset;
 }
 
 .container-sm {
-    border: 3px solid;
     height: fit-content;
     width: 70%;
 }
@@ -42,7 +45,7 @@ h1 {
 
 /* Posts */
 
-.post-container{
+.post-container {
     border: 3px solid;
     margin: 50px;
 }
@@ -55,4 +58,72 @@ h1 {
     font-size: 50px;
     text-transform: capitalize;
     text-align: center;
+}
+
+.container-sm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* post images */
+.card-img-top {
+    width: 100%;
+    max-height: 600px;
+}
+
+/* The posts comments made by users area */
+.user-comment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* comment form section */
+
+.input-area {
+    border-radius: 0px;
+    border: transparent;
+    border-bottom: 1px solid #000;
+}
+
+input {
+    background-color: unset;
+}
+
+.form-control {
+    background-color: transparent;
+}
+
+textarea {
+    border: 1px solid #000
+}
+
+.btn {
+    border-radius: 0px;
+    margin-top: 15px;
+}
+
+.comment-container {
+    margin: 50px auto;
+    width: 750px;
+}
+
+.user-comment {
+    width: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid;
+    height: 200px;
+}
+
+.offset-lg-3 {
+    margin-left: 0;
+}
+
+.mt-5{
+    margin-top: 100px!important;
 }
