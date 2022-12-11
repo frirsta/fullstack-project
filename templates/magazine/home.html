@@ -9,8 +9,10 @@
 <div class="container">
   {% for post in object_list %}
 
-    <div class="post-container">
-    <div class="blog-image"></div>
+  <div class="post-container">
+    {% if post.image %}
+    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-img-top">
+    {% endif %}
     <div class="card-body">
       <h2 class="card-title">{{ post.title }}</h2>
       <p class="card-text"><small class="text-muted">{{ post.author }} | {{ post.created_on }}</small></p>
