@@ -8,7 +8,17 @@ body {
     background: -webkit-linear-gradient(top, #FFF0F5 0%, #FFFFFF 50%, #FFF0F5 100%);
     background: linear-gradient(to bottom, #FFF0F5 0%, #FFFFFF 50%, #FFF0F5 100%);
 }
+/* base css for all pages */
 
+h1{
+    font-size: 200px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.bg-light{
+    --bs-bg-opacity: unset;
+}
 .container-sm{
     border: 3px solid;
     height: fit-content;
@@ -18,4 +28,12 @@ body {
 .card {
     background-color: unset;
     align-items: center;
+}
+
+/* Hero */
+
+.hero {
+    background: url("/static/images/hero/hero.jpg") no-repeat center center;
+    height: 600px;
+
 }
