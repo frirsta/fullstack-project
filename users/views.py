@@ -30,15 +30,15 @@ def loginUser(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
-            email = form.cleaned_data["email"]
+            username = form.cleaned_data["username"]
             password = form.cleaned_data["password"]
 
-            user = authenticate(email=email, password=password)
+            user = authenticate(username=username, password=password)
             if user:
                 login(request, user)
                 return redirect("magazine:home")
             else:
-                messages.error(request, 'Invalid email or password')
+                messages.error(request, 'Invalid username or password')
     else:
         form = LoginForm()
 

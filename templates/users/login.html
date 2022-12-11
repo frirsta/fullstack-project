@@ -8,12 +8,12 @@
             {% csrf_token %}
 
             <div class="form-group">
-                {{ form.email.label_tag }}
-                <input type="email" class="form-control {% if form.email.errors %}is-invalid{% endif %}" id="id_email"
-                    name="email" value='{{ form.email.value|default:"" }}'>
-
-                {% if form.email.errors %}
-                <div class="invalid-feedback">{{ form.email.errors }}</div>
+                {{ form.username.label_tag }}
+                <input type="text" class="form-control {% if form.username.errors %}is-invalid{% endif %}" id="id_username"
+                    name="username" value='{{ form.username.value|default:"" }}'>
+                <small class="text-muted">{{ form.username.help_text }}</small>
+                {% if form.username.errors %}
+                <div class="invalid-feedback">{{ form.username.errors }}</div>
                 {% endif %}
             </div>
             <div class="form-group">

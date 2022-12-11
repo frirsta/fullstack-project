@@ -52,12 +52,13 @@ h3 {
 
 .card-body {
     width: 750px;
+    text-align: left;
 }
 
 .card-title {
-    font-size: 50px;
+    font-size: 70px;
+    font-weight: 100;
     text-transform: capitalize;
-    text-align: center;
 }
 
 .container-sm {
@@ -69,7 +70,7 @@ h3 {
 
 /* post images */
 .card-img-top {
-    width: 100%;
+    width: 750px;
     max-height: 600px;
 }
 
