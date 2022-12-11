@@ -21,6 +21,14 @@ h3 {
     font-size: 40px;
 }
 
+a {
+    color: #000;
+}
+
+ul {
+    list-style-type: none;
+}
+
 .bg-light {
     --bs-bg-opacity: unset;
 }
@@ -34,23 +42,24 @@ h3 {
     background-color: unset;
     align-items: center;
 }
+
 /* forms */
 .form {
     width: 700px;
     margin: 50px;
 }
 
-.form-group{
+.form-group {
     margin: 20px auto;
 }
 
-label{
+label {
     font-size: 20px;
 }
 
 /* login form */
 
-.login-container{
+.login-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -147,6 +156,20 @@ textarea {
     margin-left: 0;
 }
 
-.mt-5{
-    margin-top: 100px!important;
+.mt-5 {
+    margin-top: 100px !important;
+}
+
+/* footer */
+
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.footer-links li {
+    margin: 30px 50px;
 }
