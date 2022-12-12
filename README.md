@@ -23,3 +23,5 @@
 ## Deployment
 
 ## Credits
+
+Bild av Pixabay: https://www.pexels.com/sv-se/foto/barnkammare-dekor-design-golv-462235/
