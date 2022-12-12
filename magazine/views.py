@@ -62,7 +62,7 @@ class PostView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content', 'image']
+    fields = ['title', 'article_description', 'content', 'image']
 
     def get_success_url(self):
         messages.success(
@@ -79,7 +79,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
-    fields = ['title', 'content', 'image']
+    fields = ['title', 'article_description', 'content', 'image']
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

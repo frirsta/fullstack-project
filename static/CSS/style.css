@@ -73,7 +73,12 @@ label {
 }
 
 /* Posts */
-
+.blog-post-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .post-container {
     border: 3px solid;
     margin: 50px;
@@ -87,12 +92,16 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
+    font-size: 20px;
+    text-transform: capitalize;
 }
 
 .card-title {
     font-size: 70px;
     font-weight: 100;
     text-transform: capitalize;
+    text-align: center;
 }
 
 .container-sm {

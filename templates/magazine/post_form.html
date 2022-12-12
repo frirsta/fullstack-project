@@ -14,6 +14,17 @@
             <div class="invalid-feedback">{{ form.title.errors }}</div>
             {% endif %}
         </div>
+
+        <div class="form-group">
+            {{ form.article_description.label_tag }}
+            <textarea type="text" class="form-control input-area {% if form.article_description.errors %}is-invalid{% endif %}"
+                id="id_article_description" name="article_description" rows="10" cols="10">{{ form.article_description.value|default:"" }}</textarea>
+
+            {% if form.article_description.errors %}
+            <div class="invalid-feedback">{{ form.article_description.errors }}</div>
+            {% endif %}
+        </div>
+
         <div class="form-group">
             {{ form.content.label_tag }}
             <textarea type="text" class="form-control input-area {% if form.content.errors %}is-invalid{% endif %}"
