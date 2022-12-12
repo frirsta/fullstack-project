@@ -16,7 +16,10 @@ h1 {
     font-weight: 100;
     text-align: center;
 }
-
+h2 {
+    text-transform: capitalize;
+    text-align: center;
+}
 h3 {
     font-size: 40px;
 }
@@ -73,12 +76,13 @@ label {
 }
 
 /* Posts */
-.blog-post-container{
+.blog-post-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .post-container {
     border: 3px solid;
     margin: 50px;
@@ -88,7 +92,8 @@ label {
     width: 750px;
     text-align: left;
 }
-.blog-author-date{
+
+.blog-author-date {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,6 +140,10 @@ label {
 
 /* comment form section */
 
+form {
+    width: 70%;
+}
+
 .input-area {
     border-radius: 0px;
     border: transparent;
@@ -151,6 +160,10 @@ input {
 
 textarea {
     border: 1px solid #000
+}
+
+#id_article_description {
+    height: 70px;
 }
 
 .btn {

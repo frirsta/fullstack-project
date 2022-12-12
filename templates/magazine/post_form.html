@@ -17,7 +17,7 @@
 
         <div class="form-group">
             {{ form.article_description.label_tag }}
-            <textarea type="text" class="form-control input-area {% if form.article_description.errors %}is-invalid{% endif %}"
+            <textarea placeholder="Describe what this article is about" type="text" class="form-control input-area {% if form.article_description.errors %}is-invalid{% endif %}"
                 id="id_article_description" name="article_description" rows="10" cols="10">{{ form.article_description.value|default:"" }}</textarea>
 
             {% if form.article_description.errors %}

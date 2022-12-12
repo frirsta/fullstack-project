@@ -12,6 +12,7 @@
         {{ post.author }} | {{ post.created_on }}
        </span>
       <h2 class="card-title">{% block title %} {{ post.title }} {% endblock title %}</h2>
+      <h3>{{ post.article_description }}</h3>
       <p class="card-text">{{ post.content | safe }}</p>
 
 
