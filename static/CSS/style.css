@@ -111,6 +111,14 @@ label {
     align-items: center;
 }
 
+.comment-content {
+    width: 70%;
+}
+
+.comment-content-name {
+    width: 30%;
+}
+
 /* comment form section */
 
 .input-area {
@@ -160,11 +168,14 @@ textarea {
 
 /* footer */
 
+.footer-container {
+    width: 100%;
+}
 
 .footer-links {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     font-size: 50px;
 }
