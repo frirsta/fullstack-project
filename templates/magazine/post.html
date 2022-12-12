@@ -8,6 +8,9 @@
   {% endif %}
 
     <div class="card-body">
+      <span class="blog-author-date {% url 'users:profile' post.author.username %}">
+        {{ post.author }} | {{ post.created_on }}
+       </span>
       <h2 class="card-title">{% block title %} {{ post.title }} {% endblock title %}</h2>
       <p class="card-text">{{ post.content | safe }}</p>
 
