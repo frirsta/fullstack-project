@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.views import generic
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.utils.text import slugify
 from django.urls import reverse_lazy
@@ -107,3 +108,9 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 
     def get_queryset(self):
         return self.model.objects.filter(author=self.request.user)
+
+
+class UserPostView(ListView):
+    template_name = 'users/user_posts.html'
+    queryset = Post.objects.all()
+    paginate_by = 2
