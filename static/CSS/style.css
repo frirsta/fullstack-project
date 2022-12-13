@@ -237,3 +237,12 @@ textarea {
 .footer-links li {
     margin: 30px 50px;
 }
+
+/* profile page */
+
+.profile-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

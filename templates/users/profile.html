@@ -2,18 +2,20 @@
 {% load static %}
 
 {% block content %}
-<div class="card" style="width: 18rem;">
-    {% if user.profile.image %}
-    <img src="{{ profile.image.url }}" class="card-img-top" alt="{{ user.username }}">
-    {% else %}
-    <img src="{% static 'images/avatar.png' %}" class="card-img-top" alt="{{ user.username }}">
-    {% endif %}
-    <div class="card-body">
-      <h3 class="card-text">{{ user.username }}</h3>
-      <p class="card-text">{{ user.profile.about_me }}</p>
-    </div>
-    <p><a class="btn btn-outline-dark" href="{% url 'users:about_user' %}">Edit</a></p>
-    <p><a class="btn btn-outline-dark" href="{% url 'users:password_change' %}">Change Password</a></p>
-    <p><a class="btn btn-outline-dark" href="{% url 'magazine:user_posts' %}">My Posts</a></p>
+<div>
+<div class="profile-container">
+  {% if user.profile.image %}
+  <img src="{{ profile.image.url }}" class="card-img-top" alt="{{ user.username }}">
+  {% else %}
+  <img src="{% static 'images/avatar.png' %}" class="card-img-top" alt="{{ user.username }}">
+  {% endif %}
+  <div class="profile-info">
+    <h3 class="card-text">{{ user.username }}</h3>
+    <p class="card-text">{{ user.profile.about_me }}</p>
   </div>
+  <p><a class="btn btn-outline-dark" href="{% url 'users:about_user' %}">Edit</a></p>
+  <p><a class="btn btn-outline-dark" href="{% url 'users:password_change' %}">Change Password</a></p>
+  <p><a class="btn btn-outline-dark" href="{% url 'magazine:user_posts' %}">My Posts</a></p>
+</div>
+</div>
 {% endblock content %}
