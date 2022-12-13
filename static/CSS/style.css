@@ -27,7 +27,8 @@ h2 {
     text-align: center;
 }
 h3 {
-    font-size: 40px;
+    font-size: 30px;
+    text-transform: capitalize;
 }
 
 a {
@@ -125,6 +126,7 @@ label {
 /* post images */
 .post-image{
     width: 756px;
+    max-height: 800px;
 }
 .card-img-top {
     width: 200px;

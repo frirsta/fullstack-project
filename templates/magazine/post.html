@@ -19,8 +19,8 @@
     </div>
     {% if post.author == request.user %}
     <div class="container">
-      <a class="btn btn-primary" href="{% url 'magazine:post_update' post.id %}">Edit</a>
-      <a class="btn btn-danger" href="{% url 'magazine:post_delete' post.id %}">Delete</a>
+      <a class="btn btn-outline-dark" href="{% url 'magazine:post_update' post.id %}">Edit</a>
+      <a class="btn btn-outline-dark" href="{% url 'magazine:post_delete' post.id %}">Delete</a>
     </div>
     {% endif %}
     <span class="blog-author-date {% url 'users:profile' post.author.username %}">

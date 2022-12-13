@@ -18,9 +18,8 @@
         {{ post.author }} | {{ post.created_on }}
        </span>
       <h2 class="card-title">{{ post.title }}</h2>
-      <h2>{{ post.article_description }}</h2>
-      <p>{{ post.content }}</p>
-      <a href="{% url 'magazine:post' post.id post.slug %}">LEARN MORE</a>
+      <h3>{{ post.article_description }}</h3>
+      <a class="btn btn-outline-dark" href="{% url 'magazine:post' post.id post.slug %}">READ MORE</a>
     </div>
   </div>
   {% endfor %}
