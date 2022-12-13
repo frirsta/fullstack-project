@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 
+
+* {
+    border: 3px solid red;
+}
+
+
 body {
     box-sizing: border-box;
     font-family: 'Cormorant Garamond', serif;
@@ -138,7 +144,7 @@ label {
     width: 30%;
 }
 
-/* comment form section */
+/* form sections */
 
 form {
     width: 70%;
@@ -170,10 +176,18 @@ textarea {
     border-radius: 0px;
     margin-top: 15px;
 }
+/* comment form */
 
 .comment-container {
     margin: 50px auto;
     width: 750px;
+}
+
+.comment-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-comment {
