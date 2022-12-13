@@ -2,7 +2,7 @@
 
 
 * {
-    border: 3px solid red;
+   
 }
 
 
@@ -123,6 +123,9 @@ label {
 }
 
 /* post images */
+.post-image{
+    width: 756px;
+}
 .card-img-top {
     width: 200px;
     max-height: 300px;

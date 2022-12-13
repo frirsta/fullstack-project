@@ -110,7 +110,10 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
         return self.model.objects.filter(author=self.request.user)
 
 
-class UserPostView(ListView):
+class UserPostView(generic.ListView):
+    model = Post
     template_name = 'users/user_posts.html'
-    queryset = Post.objects.all()
     paginate_by = 2
+
+    def get_queryset(self):
+        return self.model.objects.filter(author=self.request.user).order_by('-created_on')
