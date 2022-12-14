@@ -9,6 +9,13 @@ from django.contrib import messages
 
 
 def signup(request):
+    """
+    This function handles the signup form.
+    This function creates a User instance.
+    The user is logged in with the login() funtion.
+    When user is created they get redirected to home.html.
+
+    """
     if request.user.is_authenticated:
         return redirect('magazine:home')
     if request.method == 'POST':
@@ -25,6 +32,11 @@ def signup(request):
 
 
 def loginUser(request):
+    """
+    This functions handles the login form.
+    When they user logs in they get redirected to home.html.
+    This function dispays a message on the page if the username or password is incorrect.
+    """
     if request.user.is_authenticated:
         return redirect("magazine:home")
     if request.method == "POST":
@@ -46,6 +58,9 @@ def loginUser(request):
 
 
 def logoutUser(request):
+    """
+    This function redirects the user to login page when the user logs out.
+    """
     logout(request)
     return redirect(reverse("users:login"))
 
