@@ -10,16 +10,32 @@ from .models import Post, Comment
 
 
 class HomeView(ListView):
+    """
+    This class shows all posts, and adds the newest post on top of the page.
+    The posts are ordered by date in decreasing order.
+    """
+
     template_name = 'magazine/home.html'
     queryset = Post.objects.all()
     paginate_by = 2
 
 
 class PostView(DetailView):
+    """
+    This class handles the detail view. When the user clicks 'read more'
+    the user get redirected to post.html.
+    This class also handles the comments.
+    """
     model = Post
     template_name = "magazine/post.html"
 
     def get_context_data(self, **kwargs):
+        """
+        This function handles the comments that have been made.
+        This function gets the primary key of a specific post.
+        This function gets the comments that have been made on that post.
+
+        """
         context = super().get_context_data(**kwargs)
         pk = self.kwargs["pk"]
         slug = self.kwargs["slug"]
@@ -34,6 +50,11 @@ class PostView(DetailView):
         return context
 
     def post(self, request, *args, **kwargs):
+        """
+        This function handles the comment form in the posts DetailView.
+        When a post request is made, when a user has commented, the function gets all comments from that post.
+        If the form is valid, the function saves the comment and add it to the post.
+        """
         form = CommentForm(request.POST)
         self.object = self.get_object()
         context = super().get_context_data(**kwargs)
@@ -62,15 +83,27 @@ class PostView(DetailView):
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
+    """
+    This class handles the view where the user can write and publish a blog post.
+    It gives the user fields where they can fill in a title,
+    a decription of the post, post content and they can add an image.
+    """
     model = Post
     fields = ['title', 'article_description', 'content', 'image']
 
     def get_success_url(self):
+        """
+        This method redirects the user to the home page.
+        It also displays a message.
+        """
         messages.success(
             self.request, 'Your post has been created successfully')
         return reverse_lazy('magazine:home')
 
     def form_valid(self, form):
+        """
+        This method saves the model if the form is valid.
+        """
         obj = form.save(commit=False)
         obj.author = self.request.user
         obj.slug = slugify(form.cleaned_data['title'])
@@ -79,6 +112,12 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
+    """
+    This class handles the view where the user can edit their blog post.
+    It gives the user fields where they can change the title,
+    the decription of the post, the post content and they can change the image.
+    This function redirects the user to home.html when the update is done.
+    """
     model = Post
     fields = ['title', 'article_description', 'content', 'image']
 
@@ -99,6 +138,10 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 
 
 class PostDeleteView(LoginRequiredMixin, DeleteView):
+    """
+    This class redirects the user to home.html when they have deleted their post.
+    It also displays a message.
+    """
     model = Post
 
     def get_success_url(self):
@@ -111,6 +154,11 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 
 
 class UserPostView(generic.ListView):
+    """
+    This class filters the posts made by a specific user.
+    The posts are shown on user_posts.html.
+    The posts are ordered by date, where the latest post is shown on top of the page.
+    """
     model = Post
     template_name = 'users/user_posts.html'
     paginate_by = 2
