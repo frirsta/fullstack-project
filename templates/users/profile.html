@@ -5,17 +5,20 @@
 <div>
 <div class="profile-container">
   {% if user.profile.image %}
+  <div class="profile-info"></div>
   <img src="{{ profile.image.url }}" class="card-img-top" alt="{{ user.username }}">
   {% else %}
   <img src="{% static 'images/avatar.png' %}" class="card-img-top" alt="{{ user.username }}">
   {% endif %}
-  <div class="profile-info">
+  
     <h3 class="card-text">{{ user.username }}</h3>
     <p class="card-text">{{ user.profile.about_me }}</p>
+    <p><a class="btn btn-outline-dark" href="{% url 'users:about_user' %}">Edit</a></p>
   </div>
-  <p><a class="btn btn-outline-dark" href="{% url 'users:about_user' %}">Edit</a></p>
+  <div class="profile-links">
   <p><a class="btn btn-outline-dark" href="{% url 'users:password_change' %}">Change Password</a></p>
   <p><a class="btn btn-outline-dark" href="{% url 'magazine:user_posts' %}">My Posts</a></p>
+</div>
 </div>
 </div>
 {% endblock content %}
