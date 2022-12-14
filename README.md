@@ -26,3 +26,4 @@
 
 Bild av Pixabay: https://www.pexels.com/sv-se/foto/barnkammare-dekor-design-golv-462235/
 Bild av Max Vakhtbovych: https://www.pexels.com/sv-se/foto/mat-stad-restaurang-manniskor-6434622/
+Bild av Nugroho  Wahyu : https://www.pexels.com/sv-se/foto/inne-tra-design-rum-3119180/ hero image
