@@ -15,7 +15,7 @@ body {
 
 /* base css for all pages */
 
-h1 {
+.logo {
     font-size: 200px;
     font-weight: 100;
     text-align: center;

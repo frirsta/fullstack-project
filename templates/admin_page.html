@@ -17,20 +17,19 @@
         </tr>
       </thead>
       {% for comment in comments %}
-  
+
       <tbody>
         <tr>
           <th scope="row">1</th>
           <td scope="col">{{ comment.name }}</td>
           <td scope="col">{{ comment.email }}</td>
           <td scope="col">{{ comment.post }}</td>
-          {% csrf_token %}
           <td scope="col">{{ comment.content }}</td>
           <td scope="col">{{ comment.created }}</td>
           <td scope="col">{{ comment.approved }}</td>
+          <td><a class="btn btn-outline-dark" href="{% url 'magazine:comment_delete' comment.id %}">Delete</a></td>
         </tr>
-        
-        <a class="btn btn-outline-dark" href="{% url 'magazine:comment_delete' comment.id %}">Delete</a>
+
         {% endfor %}
       </tbody>
     </table>
