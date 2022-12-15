@@ -20,7 +20,7 @@ class HomeView(ListView):
     paginate_by = 2
 
 
-class AdminPage(generic.ListView):
+class AdminPage(LoginRequiredMixin, ListView):
     """
     This class adds all the models data in one area for the superuser.
     """
@@ -181,3 +181,16 @@ class UserPostView(generic.ListView):
 
     def get_queryset(self):
         return self.model.objects.filter(author=self.request.user).order_by('-created_on')
+
+
+class CommentDeleteView(LoginRequiredMixin, DeleteView):
+    """
+    This class deletes the comment.
+    It also displays a message.
+    """
+    model = Comment
+
+    def get_success_url(self):
+        messages.success(
+            self.request, 'Comment has been deleted successfully')
+        return reverse_lazy('magazine:admin_page')
