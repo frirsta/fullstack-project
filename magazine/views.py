@@ -20,6 +20,22 @@ class HomeView(ListView):
     paginate_by = 2
 
 
+class AdminPage(generic.ListView):
+    """
+    This class adds all the models data in one area for the superuser.
+    """
+
+    model = Post
+    template_name = 'admin_page.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['post'] = Post.objects.all()
+        context['comments'] = Comment.objects.all()
+        context['comments_approved'] = Comment.objects.filter(approved=True)
+        return context
+
+
 class PostView(DetailView):
     """
     This class handles the detail view. When the user clicks 'read more'

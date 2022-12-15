@@ -25,6 +25,7 @@ class Comment(models.Model):
     content = models.TextField()
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=True)
 
     class Meta:
         ordering = ('-created',)

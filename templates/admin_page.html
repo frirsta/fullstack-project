@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_superuser %}
+<div class="container-fluid">
+    <h1>Admin Page</h1>
+    <div class="admin-container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Post title</th>
+        <th scope="col">comment content </th>
+        <th scope="col">comment created</th>
+        <th scope="col">comment approved</th>
+      </tr>
+    </thead>
+    {% for comment in comments %}
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td scope="col">{{ comment.name }}</td>
+        <td scope="col">{{ comment.email }}</td>
+        <td scope="col">{{ comment.post }}</td>
+        <td scope="col">{{ comment.content }}</td>
+        <td scope="col">{{ comment.created }}</td>
+        <td scope="col">{{ comment.approved }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+    </div>
+</div>
+{% else %}
+<div class="staff-container">
+<h2>This is a staff page</h1>
+</div>
+{% endif %}
+{% endblock content %}
