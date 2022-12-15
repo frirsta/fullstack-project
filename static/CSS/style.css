@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 
 
-* {}
-
-
 body {
     box-sizing: border-box;
     font-family: 'Cormorant Garamond', serif;
@@ -88,19 +85,20 @@ label {
 
 /* Posts */
 .blog-post-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+}
+
+.col-4{
+    width: 30%;
 }
 
 .post-container {
     border: 3px solid;
-    margin: 50px;
+    
 }
 
 .card-body {
-    width: 750px;
+
     text-align: left;
 }
 
@@ -114,7 +112,7 @@ label {
 }
 
 .card-title {
-    font-size: 70px;
+
     font-weight: 100;
     text-transform: capitalize;
     text-align: center;
@@ -129,7 +127,7 @@ label {
 
 /* post images */
 .post-image {
-    width: 756px;
+    width: 200px;
     max-height: 800px;
 }
 
@@ -264,7 +262,7 @@ textarea {
         font-size: 150px;
     }
 
-    .blog-author-date {}
+    
 
     .post-container {
         margin: 10px;
@@ -304,8 +302,4 @@ textarea {
     }
 
     /* profile */
-
-    .profile-links{
-        
-    }
 }

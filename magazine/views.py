@@ -17,7 +17,7 @@ class HomeView(ListView):
 
     template_name = 'magazine/home.html'
     queryset = Post.objects.all()
-    paginate_by = 2
+    paginate_by = 10
 
 
 class AdminPage(LoginRequiredMixin, ListView):
