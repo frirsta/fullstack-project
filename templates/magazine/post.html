@@ -6,6 +6,8 @@
     <div class="post-container">
   {% if post.image %}
   <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image">
+  {% else %}
+  <img src="{% static 'images/default-post.jpg' %}" class="post-image" alt="{{ post.title }}">
   {% endif %}
 
     <div class="card-body">
