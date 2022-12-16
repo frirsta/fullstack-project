@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<div>
+<div class="profile-outer">
 <div class="profile-container">
   {% if user.profile.image %}
   <div class="profile-info"></div>
@@ -11,14 +11,14 @@
   <img src="{% static 'images/avatar.png' %}" class="card-img-top" alt="{{ user.username }}">
   {% endif %}
   
-    <h3 class="card-text">{{ user.username }}</h3>
+    <h3>{{ user.username }}</h3>
     <p class="card-text">{{ user.profile.about_me }}</p>
-    <p><a class="btn btn-outline-dark" href="{% url 'users:about_user' %}">Edit</a></p>
   </div>
   <div class="profile-links">
+    <p><a class="btn btn-outline-dark" href="{% url 'users:about_user' %}">Edit About Text</a></p>
   <p><a class="btn btn-outline-dark" href="{% url 'users:password_change' %}">Change Password</a></p>
   <p><a class="btn btn-outline-dark" href="{% url 'magazine:user_posts' %}">My Posts</a></p>
 </div>
 </div>
-</div>
+
 {% endblock content %}
