@@ -89,26 +89,43 @@ label {
     height: 600px;
 
 }
-
 /* Posts */
 .blog-post-container {
-
-}
-
-.col-4{
-    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
 }
 
 .post-container {
-    border: 3px solid;
-    
+    margin: 10px;
+    position: relative;
+    text-align: center;
+    padding: 0;
+    color: #FFFFFF;
 }
 
+.card-title {
+    font-size: 30px;
+    font-weight: 700;
+}
 .card-body {
-
-    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 600px;
 }
-
+.col-4{
+    width: 30%;
+    height: 600px;
+}
 .blog-author-date {
     display: flex;
     flex-direction: column;
@@ -116,26 +133,22 @@ label {
     margin-top: 10px;
     font-size: 20px;
     text-transform: capitalize;
+} 
+
+.title-description-container{
+
 }
-
-.card-title {
-
-    font-weight: 100;
-    text-transform: capitalize;
-    text-align: center;
-}
-
 .container-sm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 /* post images */
 .post-image {
-    width: 200px;
-    max-height: 800px;
+    width: 400px;
+    height: 600px;
+    border-radius: 2px;
 }
 
 .card-img-top {
@@ -146,7 +159,12 @@ label {
 /* The posts comments made by users area */
 
 .post-image-detail{
-    width: 300px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.container{
+    padding: 10px 0;
 }
 
 .user-comment-container {
@@ -202,7 +220,7 @@ textarea {
 
 .btn {
     border-radius: 0px;
-    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 /* comment form */

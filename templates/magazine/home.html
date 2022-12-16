@@ -16,18 +16,14 @@
     {% else %}
     <img src="{% static 'images/default-post.jpg' %}" alt="{{ post.title }}" class="post-image">
     {% endif %}
-    <!-- {% if post.image %}
-    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image">
-    {% else %}
-    <img src="{% static 'images/default-post.jpg' %}" class="post-image" alt="{{ post.title }}">
-    {% endif %} -->
-
     <div class="card-body">
       <span class="blog-author-date {% url 'users:profile' post.author.username %}">
         {{ post.author }} | {{ post.created_on }}
        </span>
+       <div class="title-description-container">
       <h2 class="card-title">{{ post.title }}</h2>
       <h3>{{ post.article_description }}</h3>
+    </div>
       <a class="btn btn-outline-dark" href="{% url 'magazine:post' post.id post.slug %}">READ MORE</a>
     </div>
   </div>
