@@ -3,14 +3,14 @@
 {% block content %}
 <div class="container">
   <div class="container-sm">
-    <div class="post-container">
+    <div class="post-detail-container">
   {% if post.image %}
-  <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image">
+  <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image-detail">
   {% else %}
   <img src="{% static 'images/default-post.jpg' %}" class="post-image" alt="{{ post.title }}">
   {% endif %}
 
-    <div class="card-body">
+    <div class="post-card-body">
       <span class="blog-author-date {% url 'users:profile' post.author.username %}">
         {{ post.author }} | {{ post.created_on }}
        </span>
