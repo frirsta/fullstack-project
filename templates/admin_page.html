@@ -3,7 +3,21 @@
 {% if user.is_superuser %}
 <div class="container-fluid">
   <h1>Admin Page</h1>
- 
+  <div class="info-card">
+    <div class="info-body">
+      This is some text within a card body.
+    </div>
+  </div>
+  <div class="info-card">
+    <div class="info-body">
+      This is some text within a card body.
+    </div>
+  </div>
+  <div class="info-card">
+    <div class="info-body">
+      This is some text within a card body.
+    </div>
+  </div>
 
   <div class="admin-container">
     <div class="">
@@ -12,6 +26,7 @@
           <tr>
           <th scope="col">Name</th>
           <th scope="col">Post title</th>
+          <th scope="col" class="post-content">Post Content</th>
           <th scope="col">Date</th>
         </tr>
         </thead>
@@ -20,6 +35,16 @@
           <tr>
             <td scope="col">{{ post.author }}</td>
             <td scope="col">{{ post.title }}</td>
+            <td scope="col">
+              <div class="dropdown">
+              <button class="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ post.title }}
+              </button>
+              <ul class="dropdown-menu">
+                <li><p class="" href="#">{{ post.content }}</p></li>
+              </ul>
+            </div>
+          </td>
             <td scope="col">{{ post.created_on }}</td>
             <td><a class="btn btn-outline-dark" href="{% url 'magazine:admin_post_delete' post.id %}">Delete</a></td>
           </tr>

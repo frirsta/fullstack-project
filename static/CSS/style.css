@@ -35,7 +35,7 @@ h3 {
 }
 
 div {
-    font-family: 'Cormorant Garamond', serif!important;
+    font-family: 'Cormorant Garamond', serif !important;
     white-space: unset !important;
     line-height: unset !important;
 }
@@ -112,12 +112,17 @@ label {
     transition: .2s;
 }
 
+.post-admin {
+    border: 3px solid;
+}
+
 .post-container:hover {
     transform: scale(1.1);
-    
+
 }
+
 .post-image-link:hover {
-color: #000;
+    color: #000;
 }
 
 .card-title {
@@ -186,9 +191,7 @@ color: #000;
     padding: 10px 0;
 }
 
-.post-detail-text{
-    
-}
+.post-detail-text {}
 
 .user-comment-container {
     display: flex;
@@ -314,6 +317,28 @@ textarea {
     width: 300px;
 }
 
+/* Admin page */
+.info-card {}
+
+.info-body {}
+
+.col {
+  
+}
+
+.dropdown-menu {
+    position: unset!important;
+    inset: unset!important;
+    margin: unset!important;
+    transform: unset!important;
+    font-size: 14px;
+    line-height: 1.2!important;
+    width: 300px;
+}
+
+.post-content{
+    width: 400px;
+}
 
 @media screen and (max-width: 821px) {
     .hero {

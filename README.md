@@ -10,6 +10,10 @@
 ## Features for the future
 
 ## Technologies
+HTML
+CSS
+BOOTSTRAP
+DJANGO
 
 ### Languages
 
