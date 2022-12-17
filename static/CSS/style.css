@@ -114,6 +114,10 @@ label {
 
 .post-container:hover {
     transform: scale(1.1);
+    
+}
+.post-image-link:hover {
+color: #000;
 }
 
 .card-title {
