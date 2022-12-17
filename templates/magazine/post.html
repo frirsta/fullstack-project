@@ -7,7 +7,7 @@
   {% if post.image %}
   <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image-detail">
   {% else %}
-  <img src="{% static 'images/default-post.jpg' %}" class="post-image" alt="{{ post.title }}">
+  <img src="{% static 'images/default-post.jpg' %}" class="post-image-detail" alt="{{ post.title }}">
   {% endif %}
 
     <div class="post-card-body">
@@ -16,7 +16,7 @@
        </span>
       <h2 class="card-title">{% block title %} {{ post.title }} {% endblock title %}</h2>
       <h3>{{ post.article_description }}</h3>
-      <p class="card-text">{{ post.content | safe }}</p>
+      <p class="post-detail-text">{{ post.content | safe }}</p>
 
 
     </div>

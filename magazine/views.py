@@ -20,6 +20,16 @@ class HomeView(ListView):
     paginate_by = 6
 
 
+class AllPostsView(ListView):
+    """
+    This class shows all posts, and adds the newest post on top of the page.
+    The posts are ordered by date in decreasing order.
+    """
+
+    template_name = 'magazine/all_posts.html'
+    queryset = Post.objects.all()
+
+
 class AdminPage(LoginRequiredMixin, ListView):
     """
     This class adds all the models data in one area for the superuser.

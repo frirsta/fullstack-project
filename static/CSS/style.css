@@ -35,7 +35,7 @@ h3 {
 }
 
 div {
-
+    font-family: 'Cormorant Garamond', serif!important;
     white-space: unset !important;
     line-height: unset !important;
 }
@@ -184,6 +184,10 @@ color: #000;
 
 .container {
     padding: 10px 0;
+}
+
+.post-detail-text{
+    
 }
 
 .user-comment-container {
