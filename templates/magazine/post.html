@@ -17,15 +17,14 @@
       <h2 class="card-title">{% block title %} {{ post.title }} {% endblock title %}</h2>
       <h3>{{ post.article_description }}</h3>
       <p class="post-detail-text">{{ post.content | safe }}</p>
-
+      {% if post.author == request.user %}
+      <div class="container">
+        <a class="btn btn-outline-dark" href="{% url 'magazine:post_update' post.id %}">Edit</a>
+        <a class="btn btn-outline-dark" href="{% url 'magazine:post_delete' post.id %}">Delete</a>
+      </div>
+      {% endif %}
 
     </div>
-    {% if post.author == request.user %}
-    <div class="container">
-      <a class="btn btn-outline-dark" href="{% url 'magazine:post_update' post.id %}">Edit</a>
-      <a class="btn btn-outline-dark" href="{% url 'magazine:post_delete' post.id %}">Delete</a>
-    </div>
-    {% endif %}
     </div>
     {% if comments %}
     <div class="row mt-5 user-comment-container">
