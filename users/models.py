@@ -8,6 +8,7 @@ class User(AbstractUser):
     REQUIRED_FIELDS = ['email']
 
 
+# Rouizi
 class Profile(models.Model):
     about_me = models.TextField()
     image = models.ImageField(upload_to='profile_image', null=True, blank=True)

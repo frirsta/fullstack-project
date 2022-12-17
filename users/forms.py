@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import User
 
 
+# Rouizi
 class SignUpForm(UserCreationForm):
     class Meta:
         model = User
@@ -15,6 +16,7 @@ class LoginForm(forms.Form):
     password = forms.CharField()
 
 
+# Rouizi
 class AboutMeForm(forms.Form):
     username = forms.CharField()
     about_me = forms.CharField(widget=forms.Textarea())

@@ -16,6 +16,7 @@ def signup(request):
     When user is created they get redirected to home.html.
 
     """
+    # Rouizi
     if request.user.is_authenticated:
         return redirect('magazine:home')
     if request.method == 'POST':
@@ -65,6 +66,7 @@ def logoutUser(request):
     return redirect(reverse("users:login"))
 
 
+# Rouizi
 @login_required
 def profile(request, username):
     user = get_object_or_404(User, username=username)
@@ -72,6 +74,7 @@ def profile(request, username):
     return render(request, 'users/profile.html', {'profile': profile, 'user': user})
 
 
+# Rouizi
 @login_required
 def edit_user_profile(request):
     if request.method == 'POST':

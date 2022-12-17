@@ -45,7 +45,7 @@ class AdminPage(LoginRequiredMixin, ListView):
         context['comments_approved'] = Comment.objects.filter(approved=True)
         return context
 
-
+# Rouizi
 class PostView(DetailView):
     """
     This class handles the detail view. When the user clicks 'read more'
@@ -126,6 +126,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
             self.request, 'Your post has been created successfully')
         return reverse_lazy('magazine:home')
 
+# Rouizi
     def form_valid(self, form):
         """
         This method saves the model if the form is valid.
@@ -147,6 +148,7 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     fields = ['title', 'article_description', 'content', 'image']
 
+    # Rouizi
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         update = True

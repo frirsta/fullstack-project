@@ -19,6 +19,7 @@ class Post(models.Model):
         return self.title
 
 
+# Rouizi
 class Comment(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
