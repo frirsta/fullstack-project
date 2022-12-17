@@ -318,7 +318,11 @@ textarea {
 }
 
 /* Admin page */
-.info-card {}
+.info-card {
+    border: 3px solid;
+    height: 100px;
+    width: 100px;
+}
 
 .info-body {}
 

@@ -43,7 +43,10 @@ class AdminPage(LoginRequiredMixin, ListView):
         context['posts'] = Post.objects.all()
         context['comments'] = Comment.objects.all()
         context['comments_approved'] = Comment.objects.filter(approved=True)
+        context['count'] = Post.objects.all().count()
+        context['comment'] = Comment.objects.all().count()
         return context
+
 
 # Rouizi
 class PostView(DetailView):
