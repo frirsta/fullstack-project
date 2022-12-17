@@ -40,7 +40,7 @@ class AdminPage(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['post'] = Post.objects.all()
+        context['posts'] = Post.objects.all()
         context['comments'] = Comment.objects.all()
         context['comments_approved'] = Comment.objects.filter(approved=True)
         return context
@@ -195,12 +195,25 @@ class UserPostView(generic.ListView):
 
 class CommentDeleteView(LoginRequiredMixin, DeleteView):
     """
-    This class deletes the comment.
-    It also displays a message.
+    This class handles the comment deleted by the admin.
+    It displays a message if the deletion is successfull.
     """
     model = Comment
 
     def get_success_url(self):
         messages.success(
             self.request, 'Comment has been deleted successfully')
+        return reverse_lazy('magazine:admin_page')
+
+
+class AdminPostDeleteView(LoginRequiredMixin, DeleteView):
+    """
+    This class handles the posts deleted by the admin.
+    It displays a message if the deletion is successfull.
+    """
+    model = Post
+
+    def get_success_url(self):
+        messages.success(
+            self.request, 'Post has been deleted successfully')
         return reverse_lazy('magazine:admin_page')
