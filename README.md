@@ -39,3 +39,8 @@ Bild av Nugroho  Wahyu : https://www.pexels.com/sv-se/foto/inne-tra-design-rum-3
 
 Bild av Dilruba Sarıçimen: https://www.pexels.com/sv-se/foto/dryck-dricksglas-vertikalt-skott-narbild-8851505/
 Bild av Zsófia Fehér: https://www.pexels.com/sv-se/foto/byggnad-arkitektur-resa-idrottsarena-14532811/
+
+https://icons8.com/
+App icon by <a href="https://icons8.com/">Icon8</a>
+        
+      
