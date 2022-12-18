@@ -333,10 +333,17 @@ textarea {
 .info-card {
     border: 3px solid;
     height: 100px;
-    width: 100px;
+    margin: 20px;
+    width: 200px;
+    border-radius: 4px;
 }
-
-.info-body {}
+.info-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
 
 .col {}
 
