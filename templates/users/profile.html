@@ -5,12 +5,12 @@
 <div class="profile-outer">
 <div class="profile-container">
   {% if user.profile.image %}
-  <div class="profile-info"></div>
+  <div class="profile-picture">
   <img src="{{ profile.image.url }}" class="card-img-top" alt="{{ user.username }}">
   {% else %}
   <img src="{% static 'images/avatar.png' %}" class="card-img-top" alt="{{ user.username }}">
   {% endif %}
-  
+</div>
     <h3>{{ user.username }}</h3>
     <p class="card-text">{{ user.profile.about_me }}</p>
   </div>

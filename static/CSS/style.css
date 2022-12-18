@@ -174,10 +174,6 @@ label {
     border-radius: 2px;
 }
 
-.card-img-top {
-    width: 200px;
-    max-height: 300px;
-}
 
 /* The posts comments made by users area */
 
@@ -313,9 +309,21 @@ textarea {
     align-items: center;
 }
 
+    /* Profile */
+    .card-img-top {
+        width: 300px;
+        height: 300px;
+    }
+    .profile-picture{
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
 .card-text {
     width: 300px;
 }
+
+
 
 /* Admin page */
 .info-card {
@@ -451,6 +459,8 @@ textarea {
         font-size: 40px;
     }
 
+    /* Profile */
+
     /* Footer */
     footer {
         margin-top: 20px;
@@ -489,6 +499,13 @@ textarea {
         width: 240px;
         height: 450px;
     }
+
+    /* Profile */
+    .card-img-top {
+        width: 250px;
+        height: 250px;
+    }
+
 
     .card-body {
         width: 240px;
@@ -550,6 +567,24 @@ textarea {
         margin: 20px;
     }
 
+    /* profile page */
+
+    .card-img-top {
+        height: 250px;
+        width: 250px;
+    }
+    .profile-outer {
+
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .profile-container{
+        margin-bottom: 20px;
+    }
+    .card-text {
+        height: fit-content;
+    }
     /* footer */
     .card-header {
         margin-bottom: 10px;
