@@ -561,6 +561,14 @@ textarea {
         align-items: center;
     }
 
+    .post-detail-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .post-image-detail{
+            width: 100%;
+    }
     .post-image {
         width: 300px;
     }
