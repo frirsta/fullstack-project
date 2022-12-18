@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 <div class="container-fluid">
+  <h2>My Posts</h2>
   {% if user.is_authenticated %}
   <div class="user-post-container">
     {% for post in object_list %}
