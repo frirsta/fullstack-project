@@ -96,6 +96,9 @@ label {
 }
 
 /* Posts */
+.post-card-body{
+    height: fit-content;
+}
 .blog-post-container {
     display: flex;
     flex-direction: row;
@@ -309,15 +312,16 @@ textarea {
     align-items: center;
 }
 
-    /* Profile */
-    .card-img-top {
-        width: 300px;
-        height: 300px;
-    }
-    .profile-picture{
-        border-radius: 50%;
-        overflow: hidden;
-    }
+/* Profile */
+.card-img-top {
+    width: 300px;
+    height: 300px;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    overflow: hidden;
+}
 
 .card-text {
     width: 300px;
@@ -447,7 +451,7 @@ textarea {
         text-align: left;
         width: 100%;
         font-size: 12px;
-        height: 500px;
+        
     }
 
     .container-sm {
@@ -523,7 +527,11 @@ textarea {
 
 @media screen and (max-width: 375px) {
     /* home page blog posts */
-
+    h3 {
+        font-size: 20px;
+        margin: 0px;
+        padding: 0px;
+    }
     .navbar-nav {
         font-size: 30px;
     }
@@ -556,9 +564,29 @@ textarea {
     .post-image {
         width: 300px;
     }
-
+    .card-title{
+        margin: 0px;
+        padding: 5px;
+    }
     .card-body {
         width: 250px;
+    }
+
+    .post-card-body {
+        padding: 10px;
+    }
+
+    /* comment */
+    .container {
+        max-width: 375px;
+    }
+
+    .comment-container {
+        width: 375px;
+    }
+
+    .user-comment {
+        width: 350px;
     }
 
     /* Login form */
@@ -573,18 +601,22 @@ textarea {
         height: 250px;
         width: 250px;
     }
+
     .profile-outer {
 
         flex-direction: column;
         justify-content: center;
 
     }
-    .profile-container{
+
+    .profile-container {
         margin-bottom: 20px;
     }
+
     .card-text {
         height: fit-content;
     }
+
     /* footer */
     .card-header {
         margin-bottom: 10px;

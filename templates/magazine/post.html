@@ -28,19 +28,19 @@
     </div>
     {% if comments %}
     <div class="row mt-5 user-comment-container">
-      <div class="col-lg-6 offset-lg-3">
+      <div class="offset-lg-3">
         <h3>Comment{{ comments.count|pluralize }}</h3>
         <span class="badge badge-dark ml-2">{{ comments.count }}</span>
       </div>
       {% for comment in comments %}
-      <div class="col-lg-6 offset-lg-3 mt-2 user-comment">
+      <div class="offset-lg-3 mt-2 user-comment">
         <div class="p-2">
           <div class="row">
-            <div class="col-12 comment-content-name">
+            <div class="comment-content-name">
               <img class="rounded-circle mr-2" src="{% static 'images/avatar128.png' %}" alt="Avatar">
               <strong>{{ comment.name }}</strong>
             </div>
-            <div class="col-12 comment-content">
+            <div class="comment-content">
               <p class="m-1 mt-3">{{ comment.content }}</p>
               <p class="text-right text-muted"><small>{{ comment.created }}</small></p>
             </div>
