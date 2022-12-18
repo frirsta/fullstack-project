@@ -492,8 +492,11 @@ textarea {
         font-size: 50px;
     } 
     .hero {
+        background: url("/static/images/hero/hero-640px.jpg") no-repeat center center;
         max-width: 375px;
+    
     }
+ 
 
     .blog-post-container {
         width: 375px;

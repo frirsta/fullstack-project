@@ -35,3 +35,7 @@ Bild av Pixabay: https://www.pexels.com/sv-se/foto/barnkammare-dekor-design-golv
 Bild av Max Vakhtbovych: https://www.pexels.com/sv-se/foto/mat-stad-restaurang-manniskor-6434622/
 Bild av Nugroho  Wahyu : https://www.pexels.com/sv-se/foto/inne-tra-design-rum-3119180/ hero image
 Bild av Element5 Digital: https://www.pexels.com/sv-se/foto/tra-lampor-skrivbord-lampa-1125136/
+Bild av Nugroho  Wahyu : https://www.pexels.com/sv-se/foto/inne-tra-design-rum-3119180/
+
+Bild av Dilruba Sarıçimen: https://www.pexels.com/sv-se/foto/dryck-dricksglas-vertikalt-skott-narbild-8851505/
+Bild av Zsófia Fehér: https://www.pexels.com/sv-se/foto/byggnad-arkitektur-resa-idrottsarena-14532811/
