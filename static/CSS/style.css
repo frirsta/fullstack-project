@@ -96,9 +96,10 @@ label {
 }
 
 /* Posts */
-.post-card-body{
+.post-card-body {
     height: fit-content;
 }
+
 .blog-post-container {
     display: flex;
     flex-direction: row;
@@ -330,6 +331,10 @@ textarea {
 
 
 /* Admin page */
+.admin-title {
+    text-align: center;
+}
+
 .info-card {
     border: 3px solid;
     height: 100px;
@@ -337,7 +342,8 @@ textarea {
     width: 200px;
     border-radius: 4px;
 }
-.info-container{
+
+.info-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -458,7 +464,7 @@ textarea {
         text-align: left;
         width: 100%;
         font-size: 12px;
-        
+
     }
 
     .container-sm {
@@ -533,12 +539,14 @@ textarea {
 
 
 @media screen and (max-width: 375px) {
+
     /* home page blog posts */
     h3 {
         font-size: 20px;
         margin: 0px;
         padding: 0px;
     }
+
     .navbar-nav {
         font-size: 30px;
     }
@@ -568,21 +576,24 @@ textarea {
         align-items: center;
     }
 
-    .post-detail-container{
+    .post-detail-container {
         flex-direction: column;
         align-items: center;
     }
 
-    .post-image-detail{
-            width: 100%;
+    .post-image-detail {
+        width: 100%;
     }
+
     .post-image {
         width: 300px;
     }
-    .card-title{
+
+    .card-title {
         margin: 0px;
         padding: 5px;
     }
+
     .card-body {
         width: 250px;
     }
