@@ -446,6 +446,12 @@ textarea {
         width: 100%;
     }
 
+    /* forms */
+    .form-container h3 {
+        font-size: 40px;
+    }
+
+    /* Footer */
     footer {
         margin-top: 20px;
     }
@@ -489,6 +495,12 @@ textarea {
         height: 450px;
         justify-content: center;
     }
+
+    /* forms */
+    .form-container h3 {
+        font-size: 40px;
+    }
+
 }
 
 
@@ -532,8 +544,14 @@ textarea {
         width: 250px;
     }
 
+    /* Login form */
+    .form {
+        width: 300px;
+        margin: 20px;
+    }
+
     /* footer */
-    .card-header{
+    .card-header {
         margin-bottom: 10px;
     }
 
