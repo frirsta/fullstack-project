@@ -217,6 +217,7 @@ class AdminPostDeleteView(LoginRequiredMixin, DeleteView):
     It displays a message if the deletion is successfull.
     """
     model = Post
+    template_name = 'magazine/admin_post_confirm_delete.html'
 
     def get_success_url(self):
         messages.success(
